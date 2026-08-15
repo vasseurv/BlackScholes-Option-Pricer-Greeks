@@ -1,22 +1,22 @@
-CALCULATEUR DE GRECQUES + PRICER D'OPTIONS PAR BLACK-SCHOLES
-========================================
+GREEKS CALCULATOR + BLACK-SCHOLES OPTION PRICER
+================================================
 
-Cette application Streamlit calcule le prix d'une option européenne ainsi que
-les grecques suivantes selon le modèle de Black-Scholes, avec un dividende continu :
+This Streamlit application calculates the price of a European option and the
+following Greeks using the Black-Scholes model with continuous dividends:
 
 - Delta (Δ)
 - Gamma (Γ)
-- Theta (Θ), exprimé par jour
-- Vega, pour une variation de 1 point de volatilité
-- Rho, pour une variation de 1 point du taux sans risque
+- Theta (Θ), expressed per day
+- Vega, for a one percentage-point change in volatility
+- Rho, for a one percentage-point change in the risk-free rate
 
 
-PRÉREQUIS
----------
+REQUIREMENTS
+------------
 
-Il faut disposer de Python 3.9 ou d'une version plus récente.
+Python 3.9 or later is required.
 
-Les bibliothèques utilisées sont :
+The application uses the following libraries:
 
     streamlit
     numpy
@@ -26,44 +26,44 @@ Les bibliothèques utilisées sont :
 INSTALLATION
 ------------
 
-Depuis un terminal, placez-vous dans le dossier du projet.
+From a terminal, move to the project directory.
 
-
-Il est recommandé de créer un environnement virtuel :
+Creating a virtual environment is recommended:
 
     python3 -m venv .venv
     source .venv/bin/activate
 
-Installez ensuite les dépendances :
+Then install the dependencies:
 
     pip install streamlit numpy scipy
 
 
-LANCER L'APPLICATION
---------------------
+RUN THE APPLICATION
+-------------------
 
-Dans le même terminal, exécutez :
+In the same terminal, run:
 
     streamlit run app.py
 
-Streamlit ouvre normalement l'application dans votre navigateur. Si ce n'est
-pas le cas, ouvrez l'adresse affichée dans le terminal, en général.
+Streamlit should open the application in your browser. If it does not, open the
+address displayed in the terminal, usually http://localhost:8501.
+
+To stop the application, return to the terminal and press Ctrl+C.
 
 
-Pour arrêter l'application, revenez au terminal et utilisez Ctrl+C.
+USAGE
+-----
+
+Set the parameters in the left sidebar.
+
+Results update automatically whenever a parameter is changed. The purpose of
+the application is to observe how the Greeks vary as the option parameters are
+modified.
 
 
-UTILISATION
------------
+NOTES
+-----
 
-Les paramètres se règlent dans la barre latérale gauche. 
-
-Les résultats sont mis à jour automatiquement après chaque modification. L'intérêt de cette application est d'observer les variations des grecques lorsque l'on modifie les paramètres de l'option.
-
-
-REMARQUES
----------
-
-- Le modèle s'applique à des options européennes.
-- À l'échéance (T = 0), l'application retourne la valeur intrinsèque de
-  l'option ; les grecques autres que le delta sont affichées à zéro.
+- The model applies to European options.
+- At maturity (T = 0), the application returns the option's intrinsic value;
+  Greeks other than delta are shown as zero.
